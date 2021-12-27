@@ -36,8 +36,8 @@ I set loss function to categorical_crossentropya and optimizer to adam. With bat
 
 You can see the histories of the model based on accuracy and loss.
 
-![](acc.png)
+![](acc.png) ![](loss.png)
 
-![](loss.png)
+
 
 The model's accuracy on the test data is 0.9194.

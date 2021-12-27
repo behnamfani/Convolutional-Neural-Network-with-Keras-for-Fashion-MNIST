@@ -1,5 +1,5 @@
 # Convolutional-Neural-Network
-A simple CNN for training with Fashion-MNIST dataset
+A simple CNN using keras library and it is trained with Fashion-MNIST dataset
 This CNN consists of two convolutional layers, two max-pool layers, two dropout layers, and a fully connected network with two dense layers.
 
 _________________________________________________________________

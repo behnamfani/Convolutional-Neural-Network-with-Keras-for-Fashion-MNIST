@@ -1,5 +1,5 @@
 # Convolutional-Neural-Network
-A simple CNN using Tensorflow and Keras libraries and is trained with Fashion-MNIST dataset to predict images of T-shirts, shoes and etc.
+A simple CNN using Tensorflow and Keras libraries and it is trained with Fashion-MNIST dataset to predict images of T-shirts, shoes and etc.
 
 The format of the images should be channels_first. Channels first mean that in a specific tensor (in this problem, input images), we have (Number_Of_Channels, Height, Width). 3 channels stand for RBG and 1 channel stands for grayscale. In this problem, the height and width of images are 28 * 28. 
 
@@ -32,4 +32,12 @@ Total params: 412,778
 Trainable params: 412,778
 Non-trainable params: 0
 
+I set loss function to categorical_crossentropya and optimizer to adam. With batch size = 64, the model is trained in 20 epochs.
 
+You can see the histories of the model based on accuracy and loss.
+
+![](acc.png)
+
+![](loss.png)
+
+The model's accuracy on the test data is 0.9194.

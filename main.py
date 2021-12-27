@@ -47,7 +47,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 
 # Fitting the model on train and validation sets and saving the weights
 checkpointer = keras.callbacks.ModelCheckpoint(filepath='model.weights.best.hdf5', verbose=1, save_best_only=True)
-history = model.fit(x_train, y_train, batch_size=64, epochs=10, validation_data=(x_valid, y_valid), callbacks=[checkpointer])
+history = model.fit(x_train, y_train, batch_size=64, epochs=20, validation_data=(x_valid, y_valid), callbacks=[checkpointer])
 
 # Plotting history of model's accuracy
 plt.plot(history.history['accuracy'])

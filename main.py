@@ -1,9 +1,10 @@
-import keras
+from keras.datasets import fashion_mnist
+from tensorflow import keras
 import numpy as np
 
 keras.backend.set_image_data_format('channels_first')
 
-(x_train, y_train), (x_test, y_test) = keras.datasets.fashion_mnist.load_data()
+(x_train, y_train), (x_test, y_test) = fashion_mnist.load_data()
 print(x_test.shape,' ', x_train.shape)
 print("x_train shape:", x_train.shape, "y_train shape:", y_train.shape)
 

@@ -1,4 +1,5 @@
-# Convolutional-Neural-Network
+# Convolutional-Neural-Network-with-Keras-for-Fashion-MNIST
+
 A simple CNN using Tensorflow and Keras libraries and it is trained with Fashion-MNIST dataset to predict images of T-shirts, shoes and etc.
 
 The format of the images should be channels_first. Channels first mean that in a specific tensor (in this problem, input images), we have (Number_Of_Channels, Height, Width). 3 channels stand for RBG and 1 channel stands for grayscale. In this problem, the height and width of images are 28 * 28. 

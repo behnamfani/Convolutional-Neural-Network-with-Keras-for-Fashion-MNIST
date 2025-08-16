@@ -1,44 +1,57 @@
-# Convolutional-Neural-Network-with-Keras-for-Fashion-MNIST
+# Convolutional Neural Network for Fashion-MNIST Classification
 
-A simple CNN using Tensorflow and Keras libraries and it is trained with Fashion-MNIST dataset to predict images of T-shirts, shoes and etc.
+A **simple CNN** built with **TensorFlow/Keras** to classify images from the **Fashion-MNIST** dataset (e.g., T-shirts, shoes, etc.). The model uses a **channels-first** input format and achieves **91.94% accuracy** on the test set.
 
-The format of the images should be channels_first. Channels first mean that in a specific tensor (in this problem, input images), we have (Number_Of_Channels, Height, Width). 3 channels stand for RBG and 1 channel stands for grayscale. In this problem, the height and width of images are 28 * 28. 
+---
 
-This CNN consists of two convolutional layers, two max-pool layers, two dropout layers, and a fully connected network with two dense layers.
+## 📌 Overview
+This project implements a **Convolutional Neural Network (CNN)** to classify grayscale images (28x28 pixels) from the **Fashion-MNIST** dataset. The model is designed with:
+- **Two convolutional layers**
+- **Two max-pooling layers**
+- **Two dropout layers** (for regularization)
+- **Two dense layers** (fully connected)
 
-_________________________________________________________________
-Layer (type)                 Output Shape              Param #   
-=================================================================
-conv2d_1 (Conv2D)            (None, 64, 28, 28)        320       
-_________________________________________________________________
-max_pooling2d_1 (MaxPooling2 (None, 64, 14, 14)        0         
-_________________________________________________________________
-dropout_1 (Dropout)          (None, 64, 14, 14)        0         
-_________________________________________________________________
-conv2d_2 (Conv2D)            (None, 32, 14, 14)        8224      
-_________________________________________________________________
-max_pooling2d_2 (MaxPooling2 (None, 32, 7, 7)          0         
-_________________________________________________________________
-dropout_2 (Dropout)          (None, 32, 7, 7)          0         
-_________________________________________________________________
-flatten_1 (Flatten)          (None, 1568)              0         
-_________________________________________________________________
-dense_1 (Dense)              (None, 256)               401664    
-_________________________________________________________________
-dropout_3 (Dropout)          (None, 256)               0         
-_________________________________________________________________
-dense_2 (Dense)              (None, 10)                2570      
-=================================================================
-Total params: 412,778
-Trainable params: 412,778
-Non-trainable params: 0
+The architecture is optimized for performance and simplicity, making it a great starting point for image classification tasks.
 
-I set loss function to categorical_crossentropya and optimizer to adam. With batch size = 64, the model is trained in 20 epochs.
+---
 
-You can see the histories of the model based on accuracy and loss.
+## 📊 Model Architecture
 
-![](acc.png) ![](loss.png)
+| Layer (Type)               | Output Shape         | Parameters |
+|----------------------------|----------------------|------------|
+| `Conv2D`                   | (None, 64, 28, 28)   | 320        |
+| `MaxPooling2D`             | (None, 64, 14, 14)   | 0          |
+| `Dropout`                  | (None, 64, 14, 14)   | 0          |
+| `Conv2D`                   | (None, 32, 14, 14)   | 8,224      |
+| `MaxPooling2D`             | (None, 32, 7, 7)     | 0          |
+| `Dropout`                  | (None, 32, 7, 7)     | 0          |
+| `Flatten`                  | (None, 1,568)        | 0          |
+| `Dense`                    | (None, 256)          | 401,664    |
+| `Dropout`                  | (None, 256)          | 0          |
+| `Dense` (Output)           | (None, 10)           | 2,570      |
 
+**Total Parameters:** 412,778
+**Trainable Parameters:** 412,778
+**Non-trainable Parameters:** 0
 
+---
 
-The model's accuracy on the test data is 0.9194.
+## 🔧 Training Details
+- **Loss Function:** Categorical Crossentropy
+- **Optimizer:** Adam
+- **Batch Size:** 64
+- **Epochs:** 20
+
+---
+
+## 📈 Performance
+- **Test Accuracy:** **91.94%**
+- **Training History:**
+  ![Training Accuracy](reports/acc.png)
+  ![Training Loss](reports/loss.png)
+
+---
+
+## 📂 Dataset
+- **Fashion-MNIST**: A [dataset](https://github.com/zalandoresearch/fashion-mnist) of 70,000 grayscale images (28x28 pixels) across 10 fashion categories.
+- **Input Format:** Channels-first (`[channels, height, width]`), where `channels=1` (grayscale).
